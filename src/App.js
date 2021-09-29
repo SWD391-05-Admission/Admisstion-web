@@ -22,10 +22,8 @@ export const history = createBrowserHistory();
 
 function App() {
   return (
-  
-    <Router history={createBrowserHistory}>
+    <Router history={history}>
       <Switch>
-
 
         <AdminTemplate path="/admin/quanLiTruongHoc" component={QuanLiTruongHoc} />
         <AdminTemplate path="/admin/themTruongHoc" component={ThemTruongHoc} />

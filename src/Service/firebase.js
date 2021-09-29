@@ -1,15 +1,15 @@
-// import dotenv from 'dotenv'
-// dotenv.config()
-// import * as firebase from "firebase/app";
-// import "firebase/auth";
+import * as firebase from 'firebase';
 
-// firebase.initializeApp({
-//   apiKey: process.env.REACT_APP_API_KEY,
-//   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-//   databaseURL: process.env.REACT_APP_DATABASE_URL,
-//   projectId: process.env.REACT_APP_PROJECT_ID,
-//   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-//   messagingSenderId:  process.env.REACT_APP_MESSAGING_SENDER_ID,
-//   appId: process.env.REACT_APP_APP_ID,
-//   measurementId: process.env.REACT_APP_MEASUREMENT_ID
-// });
+const firebaseConfig = {
+    apiKey: "AIzaSyB_gQTvBm_aPpasXRkumR9gYPTKNOjnf9g",
+    authDomain: "admisstion-auth.firebaseapp.com",
+    projectId: "admisstion-auth",
+    storageBucket: "admisstion-auth.appspot.com",
+    messagingSenderId: "158767196736",
+    appId: "1:158767196736:web:4a28d91f0e996d62488da5"
+  };
+
+  // Initialize Firebase
+ firebase.initializeApp(firebaseConfig);
+
+ export {firebase}

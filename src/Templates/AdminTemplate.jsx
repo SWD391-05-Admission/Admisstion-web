@@ -3,12 +3,13 @@ import { ProSidebar, SidebarHeader, SidebarFooter, SidebarContent, Menu, MenuIte
 import 'react-pro-sidebar/dist/css/styles.css';
 import { Route, Redirect } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { USER_LOGIN } from '../Utils/setting';
+import { ACCESS_TOKEN } from '../Utils/setting';
+import {firebase} from './../Service/firebase';
 
 export default function AdminTemplate(props) {
     return <Route exact path={props.path} render={(propsRoute) => {
         return (
-            localStorage.getItem(USER_LOGIN) ? <div className="container-fluid p-0 m-0">
+            localStorage.getItem(ACCESS_TOKEN) ? <div className="container-fluid p-0 m-0">
                 <div className="row">
                     <div className="col-3 p-0">
                         <ProSidebar style={{ position: 'fixed', width: 'auto', height: '100%', overflowX: 'hidden', overflowY: 'auto', zIndex: '101' }}>
@@ -33,20 +34,21 @@ export default function AdminTemplate(props) {
                                 </Menu>
                                 <Menu iconShape="square">
                                     <SubMenu title="Quản lí người tư vấn">
-                                        <MenuItem><NavLink to="quanLiNguoiTuVan">Danh sách nguoi tư vấn</NavLink></MenuItem>
+                                        <MenuItem><NavLink to="/admin/quanLiNguoiTuVan">Danh sách nguoi tư vấn</NavLink></MenuItem>
                                         {/* <MenuItem>Component 2</MenuItem> */}
                                     </SubMenu>
                                 </Menu>
                                 <Menu iconShape="square">
                                     <SubMenu title="Quản lí học sinh">
-                                        <MenuItem><NavLink to="quanLiHocSinh">Danh sách học sinh</NavLink></MenuItem>
+                                        <MenuItem><NavLink to="/admin/quanLiHocSinh">Danh sách học sinh</NavLink></MenuItem>
                                         {/* <MenuItem>Component 2</MenuItem> */}
                                     </SubMenu>
                                 </Menu>
                             </SidebarContent>
                             <SidebarFooter className="text-center">
                                 <NavLink to="/" onClick={()=>{
-                                    localStorage.setItem(USER_LOGIN, "");
+                                    localStorage.setItem(ACCESS_TOKEN, "");
+                                    firebase.auth().signOut();
                                 }} className="btn btn-outline-light m-3">Logout</NavLink>
                             </SidebarFooter>
                         </ProSidebar>
