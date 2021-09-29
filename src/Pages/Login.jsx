@@ -1,6 +1,9 @@
-import React from 'react'
+import { React } from 'react'
+import { NavLink } from 'react-router-dom';
 
-export default function Login() {
+function Login() {
+
+
     return (
         <div className="bg-dark" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '740px' }}>
             <form className="p-5  bg-white" style={{ width: '500px' }}>
@@ -11,13 +14,15 @@ export default function Login() {
                     <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="mật khẩu" />
                 </div>
                 <div class="form-group">
-                    <a className="btn btn-success btn-block" href="/admin">đăng nhập</a>
+                    <NavLink className="nav-link btn btn-success" to="/admin">đăng nhập</NavLink>
                 </div>
-            
                 <div className="form-group">
-                    
+                    <div className="login-buttons">
+                    </div>
                 </div>
             </form>
         </div>
     )
 }
+
+export default Login;
