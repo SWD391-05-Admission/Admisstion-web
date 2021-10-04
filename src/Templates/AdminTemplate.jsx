@@ -3,6 +3,7 @@ import { ProSidebar, SidebarHeader, SidebarFooter, SidebarContent, Menu, MenuIte
 import 'react-pro-sidebar/dist/css/styles.css';
 import { Route, Redirect } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import { history } from '../App';
 import { ACCESS_TOKEN } from '../Utils/setting';
 import {firebase} from './../Service/firebase';
 
@@ -34,21 +35,18 @@ export default function AdminTemplate(props) {
                                 </Menu>
                                 <Menu iconShape="square">
                                     <SubMenu title="Quản lí người tư vấn">
-                                        <MenuItem><NavLink to="/admin/quanLiNguoiTuVan">Danh sách nguoi tư vấn</NavLink></MenuItem>
+                                        <MenuItem><NavLink to="/admin/quanLiNguoiDung">Danh sách nguoi dùng</NavLink></MenuItem>
                                         {/* <MenuItem>Component 2</MenuItem> */}
-                                    </SubMenu>
-                                </Menu>
-                                <Menu iconShape="square">
-                                    <SubMenu title="Quản lí học sinh">
-                                        <MenuItem><NavLink to="/admin/quanLiHocSinh">Danh sách học sinh</NavLink></MenuItem>
-                                        {/* <MenuItem>Component 2</MenuItem> */}
+                                        <MenuItem><NavLink to="/admin/themNguoiDung">Thêm người dùng</NavLink></MenuItem>
                                     </SubMenu>
                                 </Menu>
                             </SidebarContent>
                             <SidebarFooter className="text-center">
                                 <NavLink to="/" onClick={()=>{
-                                    localStorage.setItem(ACCESS_TOKEN, "");
+                                    localStorage.removeItem(ACCESS_TOKEN);
                                     firebase.auth().signOut();
+                                    history.push('/');
+                                    window.location.reload();
                                 }} className="btn btn-outline-light m-3">Logout</NavLink>
                             </SidebarFooter>
                         </ProSidebar>

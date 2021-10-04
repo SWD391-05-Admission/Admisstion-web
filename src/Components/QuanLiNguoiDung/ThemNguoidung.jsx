@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function QuanLiHocSinh() {
+export default function ThemNguoidung() {
     return (
         <div>
-            Quản lí học sinh
+            Thêm Người Dùng
         </div>
     )
 }

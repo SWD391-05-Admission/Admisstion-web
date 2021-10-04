@@ -1,15 +1,16 @@
 import * as firebase from 'firebase';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB_gQTvBm_aPpasXRkumR9gYPTKNOjnf9g",
-    authDomain: "admisstion-auth.firebaseapp.com",
-    projectId: "admisstion-auth",
-    storageBucket: "admisstion-auth.appspot.com",
-    messagingSenderId: "158767196736",
-    appId: "1:158767196736:web:4a28d91f0e996d62488da5"
-  };
+  apiKey: "AIzaSyDofsuemXE0-R3wEpCrhEi2J94mzIRU0Q8",
+  authDomain: "admission-270c8.firebaseapp.com",
+  projectId: "admission-270c8",
+  storageBucket: "admission-270c8.appspot.com",
+  messagingSenderId: "666914927508",
+  appId: "1:666914927508:web:58b2634b2c4047189c5581",
+  measurementId: "G-99YZZ309FT"
+};
 
-  // Initialize Firebase
- firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
- export {firebase}
+export { firebase }
