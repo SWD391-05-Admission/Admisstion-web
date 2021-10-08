@@ -1,25 +1,31 @@
 import axios from "axios"
-import {baseService} from './baseService'
-import { DOMAIN } from '../Utils/setting'
+import { baseService } from './baseService'
+import { ACCESS_TOKEN, DOMAIN } from '../Utils/setting'
 
 export class UserService extends baseService {
-    
-    dangNhap = (token) =>{
-        return axios({
-            url: `${DOMAIN}/api/Login`,
-            data: '',
-            method: 'GET',
+
+
+    dangNhap = (token) => {
+        axios.get(`${DOMAIN}/api/Login`, {
             headers: {
-                'token': token
+                token: token
             }
         })
+            .then(function (response) {
+                return response.data;
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
-    layDuLieuDangNhap = () => {
+    layDuLieuDangNhap = (token) => {
         return axios({
-            url: `${DOMAIN}/api/Login/GetValue`,
-            method: 'GET',
+            url: `${DOMAIN}/api/Login/Post`,
+            data: '',
+            method: 'POST',
             headers: {
-                // 'Authorization': `Bearer ${localStorage.getItem(USER_LOGIN)}`
+                // 'token': token
+                'Authorization': `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`
             }
         })
     }

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ThemNguoidung() {
     return (
-        <div>
+        <div style={{marginRight:'7rem'}}>
             Thêm Người Dùng
         </div>
     )

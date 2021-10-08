@@ -1,14 +1,17 @@
 import React from 'react'
-import { useFormik,Field } from 'formik'
+import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { useParams } from 'react-router'
 
-export default function ThemTruongHoc(props) {
+export default function UpdateTruongHoc(props) {
+
+    const maTruong = useParams().maTruong;
+
     const formik = useFormik({
         initialValues: {
             tenTruong: '',
             maTruong: '',
             diaChi: '',
-            tuyenSinh:[],
             moTa: '',
             diem: '',
             minFee: '',
@@ -55,7 +58,7 @@ export default function ThemTruongHoc(props) {
     return (
         <div style={{ marginRight: '7rem' }}>
             <div className="container-flute">
-                <h1 style={{ textAlign: 'center' }}>Thêm trường học mới</h1>
+                <h1 style={{ textAlign: 'center' }}>Sửa thông tin trường học {maTruong}</h1>
                 <form onSubmit={formik.handleSubmit} className="mt-5 mb-5">
                     <h3 className="title" style={{ margin: '20px 0' }}>Thông tin trường</h3>
                     <div className="form-row" style={{ marginTop: '10px' }}>
@@ -109,15 +112,15 @@ export default function ThemTruongHoc(props) {
                     <div className="form-group">
                         <label>Phương thức tuyển sinh </label>
                         <div className="form-group form-check">
-                            <input type="checkbox" name="tuyenSinh" value="1" className="form-check-input" />
+                            <input type="checkbox" className="form-check-input" />
                             <label className="form-check-label" >Nộp học bạ</label>
                         </div>
                         <div className="form-group form-check">
-                            <input type="checkbox" name="tuyenSinh" value="2" className="form-check-input" />
+                            <input type="checkbox" className="form-check-input" />
                             <label className="form-check-label" >Tuyển sinh trực tiếp</label>
                         </div>
                         <div className="form-group form-check">
-                            <input type="checkbox" name="tuyenSinh" value="3" className="form-check-input" />
+                            <input type="checkbox" className="form-check-input" />
                             <label className="form-check-label">Thi đánh giá</label>
                         </div>
                     </div>
@@ -167,7 +170,7 @@ export default function ThemTruongHoc(props) {
                             (<div className="text text-danger">{formik.errors.facebook}</div>) : null}
                     </div>
                     <div className="text-center">
-                        <button type="submit" className="btn btn-outline-success btn-lg" >Thêm Trường</button>
+                        <button type="submit" className="btn btn-outline-success btn-lg" >Sửa thông tin Trường</button>
                     </div>
                 </form>
             </div>
