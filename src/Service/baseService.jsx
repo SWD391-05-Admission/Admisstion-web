@@ -1,5 +1,6 @@
 import axios from "axios"
 import { DOMAIN, USER_LOGIN } from './../Utils/setting';
+
 export class baseService {
     get = (url) => {
         return axios({

@@ -29,6 +29,7 @@ export default function AdminTemplate(props) {
                                         <SubMenu title="Quản lí câu hỏi thường gặp">
                                             <MenuItem><NavLink to="/admin/xemCauHoi">xem câu hỏi thường gặp</NavLink></MenuItem>
                                             <MenuItem><NavLink to="/admin/themCauHoi">Thêm câu hỏi thường gặp</NavLink></MenuItem>
+                                            
                                         </SubMenu>
                                     </SubMenu>
 
@@ -38,6 +39,7 @@ export default function AdminTemplate(props) {
                                         <MenuItem><NavLink to="/admin/quanLiNguoiDung">Danh sách nguoi dùng</NavLink></MenuItem>
                                         {/* <MenuItem>Component 2</MenuItem> */}
                                         <MenuItem><NavLink to="/admin/themNguoiDung">Thêm người dùng</NavLink></MenuItem>
+                                        <MenuItem><NavLink to="/admin/themHocSinh">Thêm Học Sinh</NavLink></MenuItem>
                                     </SubMenu>
                                 </Menu>
                             </SidebarContent>

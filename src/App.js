@@ -14,6 +14,7 @@ import ThemChuyenNganh from './Components/QuanLiTruongHoc/QuanLiChuyenNganh/Them
 import ThemTruongHoc from './Components/QuanLiTruongHoc/ThemTruongHoc';
 import QuanLiNguoiDung from './Components/QuanLiNguoiDung/QuanLiNguoiDung';
 import ThemNguoidung from './Components/QuanLiNguoiDung/ThemNguoidung';
+import ThemHocSinh from './Components/QuanLiNguoiDung/ThemHocSinh'
 // import QuanLiTruongHoc from './Component/QuanLiTruongHoc/QuanLiTruongHoc';
 // import firebase from 'firebase';
 // import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
@@ -33,6 +34,7 @@ function App() {
         <AdminTemplate path="/admin/themChuyenNganh" component={ThemChuyenNganh} />
         <AdminTemplate path="/admin/quanLiNguoidung" component={QuanLiNguoiDung} />
         <AdminTemplate path="/admin/themNguoiDung" component={ThemNguoidung} />
+        <AdminTemplate path="/admin/themHocSinh" component={ThemHocSinh} />
         <AdminTemplate path="/admin" component={QuanLiTruongHoc} />
 
 
